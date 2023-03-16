@@ -1,5 +1,6 @@
 import Header from "@/components/Header/Index";
 import MainContainer from "@/components/MainContainer";
+import PostCard from "@/components/PostCard";
 import { PostData } from "@/domain/posts/post";
 import { ReactElement } from "react";
 import { Container } from "./styles";
@@ -16,7 +17,15 @@ const HomePage = ({ posts }: HomePageProps): ReactElement => {
         <Container>
           {posts.length > 0 &&
             posts.map((post) => (
-              <h2 key={post.attributes.slug}>{post.attributes.title}</h2>
+              <PostCard
+                slug={post.attributes.slug || ""}
+                key={post.attributes.slug}
+                cover={
+                  post.attributes.cover?.data.attributes.formats?.thumbnail
+                    ?.url || ""
+                }
+                title={post.attributes.title || ""}
+              />
             ))}
         </Container>
       </MainContainer>

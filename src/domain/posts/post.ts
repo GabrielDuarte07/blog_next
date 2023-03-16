@@ -39,20 +39,22 @@ export type PostCoverFormat = {
   };
 };
 
-export type PostCover = PostCoverFormat & {
-  id?: PostID;
-  alternativeText?: string;
-  caption?: string;
-  previewUrl?: null;
-  provider?: string;
-  publishedAt?: string;
-  createdAt?: string;
-  updatedAt?: string;
-  formats?: {
-    thumbnail?: PostCoverFormat;
-    small?: PostCoverFormat;
-    medium?: PostCoverFormat;
-    large?: PostCoverFormat;
+export type PostCover = {
+  data: {
+    id?: PostID;
+    attributes: {
+      alternativeText?: string;
+      caption?: string;
+      name?: string;
+      width?: number;
+      height?: number;
+      formats?: {
+        thumbnail?: PostCoverFormat;
+        small?: PostCoverFormat;
+        medium?: PostCoverFormat;
+        large?: PostCoverFormat;
+      };
+    };
   };
 };
 
