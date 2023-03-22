@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/Index";
 import Header from "@/components/Header/Index";
 import MainContainer from "@/components/MainContainer";
 import PostCard from "@/components/PostCard";
@@ -29,6 +30,7 @@ const HomePage = ({ posts }: HomePageProps): ReactElement => {
             ))}
         </Container>
       </MainContainer>
+      <Footer />
     </>
   );
 };

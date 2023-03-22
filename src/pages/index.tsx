@@ -29,8 +29,9 @@ export default function Home({ posts }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts("populate=*&sort=id:DESC");
   return {
     props: { posts },
+    revalidate: 1,
   };
 };
