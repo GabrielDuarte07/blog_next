@@ -1,3 +1,4 @@
+import Comments from "@/comments";
 import Footer from "@/components/Footer/Index";
 import Header from "@/components/Header/Index";
 import Heading from "@/components/Heading";
@@ -29,6 +30,10 @@ const Post = ({ post }: PostProps) => {
           author={post.attributes.author?.data.attributes.name as string}
         />
         <PostContainer content={post.attributes.content as string} />
+        <Comments
+          title={post.attributes.title as string}
+          slug={post.attributes.slug as string}
+        />
       </MainContainer>
       <Footer />
     </>
